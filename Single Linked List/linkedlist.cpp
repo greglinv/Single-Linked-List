@@ -1,5 +1,7 @@
 #include "linkedlist.h"
 
+using namespace std;
+
 template <typename Item_Type>
 Single_Linked_List<Item_Type>::Single_Linked_List() : head(nullptr), tail(nullptr), num_items(0) {}
 
@@ -83,5 +85,5 @@ Item_Type Single_Linked_List<Item_Type>::back() const {
 
 template <typename Item_Type>
 bool Single_Linked_List<Item_Type>::empty() const {
-    return
+    return;
 }
