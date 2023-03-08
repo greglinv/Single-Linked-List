@@ -1,3 +1,6 @@
+#ifndef SINGLE_LINKED_LIST_H_
+#define SINGLE_LINKED_LIST_H_
+
 
 #include <iostream>
 #include <iomanip>
@@ -37,6 +40,14 @@ namespace KW {
 
 }
 
+#include "SINGLE_LINKED_LIST.tc"
+
+#endif
+
+#ifndef SINGLE_LINKED_LIST_TC_
+#define SINGLE_LINKED_LIST_TC_
+
+
 template<typename Item_Type>
 KW::Single_Linked_List<Item_Type>::Single_Linked_List(){}
 
@@ -50,3 +61,5 @@ template <typename Item_Type>
 Item_Type KW::Single_Linked_List<Item_Type>::front() const {
 	return container.front();
 }
+
+#endif
