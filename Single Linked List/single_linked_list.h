@@ -5,61 +5,42 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <string>
 using namespace std;
 
 
+struct Node {
+	string data;
+	Node* next;
 
-namespace KW {
-	template <typename Item_Type>
-	class Single_Linked_List {
+};
+
+class Single_Linked_List {
 	private:
 
-		struct Node {
-			Item_Type data;
-			Node* next;
-
-			Node(const Item_Type& data_item, Node* next_ptr = NULL) :data(data_item), next(next_ptr) {}
-		};
+		
 
 		Node* headPtr;
 		Node* tailPtr;
-		std::vector<Item_Type> container;
 		size_t num_items;
 
 	public:
 
-		Single_Linked_List() : headPtr(nullptr) {}
-		~Single_Linked_List() {}
+		Single_Linked_List();
 
-		void push_front(const Item_Type& item);
-		Item_Type front() const;
-		bool empty() const;
+		void push_front(string item);
+		void push_back(string item);
+		void pop_front();
+		void pop_back();
+		string front();
+		string back();
+		size_t find(const string item);
+		bool remove(size_t index);
+		void insert(size_t index, const string item);
+		bool empty();
 
 	};
 
 
-}
-
-#include "SINGLE_LINKED_LIST.tc"
-
-#endif
-
-#ifndef SINGLE_LINKED_LIST_TC_
-#define SINGLE_LINKED_LIST_TC_
-
-
-template<typename Item_Type>
-KW::Single_Linked_List<Item_Type>::Single_Linked_List(){}
-
-
-template <typename Item_Type>
-void KW::Single_Linked_List<Item_Type>::push_front(const Item_Type& item) {
-	container.push_front(item);
-}
-
-template <typename Item_Type>
-Item_Type KW::Single_Linked_List<Item_Type>::front() const {
-	return container.front();
-}
 
 #endif

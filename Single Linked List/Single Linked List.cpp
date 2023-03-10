@@ -1,47 +1,26 @@
 //Assigment 2
 //Gregory Linivlle
 #include <iostream>
+#include "single_linked_list.h"
 
 using namespace std;
 
 int main() {
+    Single_Linked_List list;
+    list.push_front("red");
+    cout << list.front();
 
-    string input;
-    char menu;
-    string item;
+    list.push_front("blue");
+    cout << list.front();
 
-    cin >> menu;
-    cin.ignore(1000, '\n');
+    list.push_back("green");
+    list.push_back("teal");
+    //list should be blue ,red, green, teal
 
-    cout << "What would you like to do with the list?";
+    cout << list.find("red");
+    cout << list.front();
+    list.insert(1, "purple");
 
-
-    while (toupper(menu) != 'Q') {
-        cout << "(A)dd to front, Add to (B)ack, Remove from (F)ront, (R)emove from back, (C)heck the front value, Check the back (V)alue\n";
-        cout << "(C)lear the list, Add to a Value at a (S)pecific index, Remove a value at a specific (I)ndex, Fi(N)d a specific Value, or (Q)uit\n";
-
-
-        if (toupper(menu) == 'A') {
-            cout << "What would you like to add to the front\n";
-
-            cin >> input;
-
-            cout << "Added\n";
-            cin.ignore(1000, '\n');
-        }
-        else if (toupper(menu) == 'C') {
-
-            string test = "test";
-            cout << "The item at the front is \n";
-            cout << test;
-        }
-
-        else {
-            cout << "\nInvalid menu option Try again" << endl;
-        }
-
-        cin >> menu;
-        cin.ignore(1000, '\n');
-
-    }
+    list.pop_front();
+    cout << list.front();
 }
